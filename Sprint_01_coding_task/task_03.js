@@ -4,3 +4,6 @@
 
 
 
+module.exports = (arrayNumbers) => {
+   return arrayNumbers.filter((el)=> el >= 0)
+}

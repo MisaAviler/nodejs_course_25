@@ -4,3 +4,7 @@
 
 
 
+module.exports.clearArray = (arr) => {
+    const newArr = arr.filter((el)=> typeof el ==='number' || typeof el === 'boolean')
+    return newArr;
+}

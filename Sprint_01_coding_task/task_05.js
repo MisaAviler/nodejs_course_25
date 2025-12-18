@@ -5,3 +5,10 @@
 
 
 
+module.exports.randomSymbol = (str)=>{
+    if(typeof str !== 'string') {
+        return console.log('String is not a string');
+    }
+const symbolIs = str.charAt(Math.floor(Math.random() * str.length));
+return symbolIs;
+}
