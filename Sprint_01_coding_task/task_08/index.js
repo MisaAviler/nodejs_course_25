@@ -6,3 +6,6 @@
 // Якщо рядок порожній — повертає true.
 
 // У файлі index.js реалізуйте експорт модуля з файлу string_check.js.
+
+const stringCheck = require('./string_check.js');
+console.log(stringCheck('    ')); 
