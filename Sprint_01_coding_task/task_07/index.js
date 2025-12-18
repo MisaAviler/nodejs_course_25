@@ -14,3 +14,12 @@
 // ' foo ' -> true
 // ' f oo ' -> false
 
+module.exports=(str)=>{
+     if (typeof str !=='string'){
+         return console.log('Is not a string');
+     }
+    const newStr = str.trim();
+    const space = ' ';
+    return newStr.includes(space) ? false : true;
+
+}

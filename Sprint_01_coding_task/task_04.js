@@ -7,3 +7,12 @@
 // наприклад, під час збереження імен. Подумайте, які додаткові вимоги ви б додали до цього завдання в реальному проєкті.
 
 
+module.exports.prepareString = (str) => {
+    if(!str || typeof str !== 'string') {
+        return console.log('String is empty or not a string');
+    }
+   
+    const mainStr = str.trim().toLowerCase();
+    const beggingIs = mainStr.charAt(0).toUpperCase() + mainStr.slice(1);
+    return beggingIs; 
+}
