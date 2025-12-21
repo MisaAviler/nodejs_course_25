@@ -16,8 +16,8 @@
 // console.log(task_01_CJS);
 
 // Task 02
-// const task_02_CJS = require('./task_02.js');
-// console.log(task_02_CJS(15,87,0));
+const task_02_CJS = require('./task_02.js');
+console.log(task_02_CJS(15,"",0));
 
 // Task 03
 // const task_03_CJS = require('./task_03.js');

@@ -9,14 +9,16 @@
 // Якщо буде потрібно додавати додаткові перевірки — це буде вказано в умові.
 
 module.exports = getMaxValue = (a,b,c) => {
-    if( !Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c)){
-        return console.log('Not all arguments are integers');
-    }
-    if(a===b && b===c){
-        const anyNumberArray = [a,b,c];
-        return anyNumberArray[Math.floor(Math.random() * anyNumberArray.length)];
-    }
-    return Math.max(a,b,c);
+    // if( !Number.isInteger(a) || !Number.isInteger(b) || !Number.isInteger(c)){
+    //     return console.log('Not all arguments are integers');
+    // }
+    // if(a===b && b===c){
+    //     const anyNumberArray = [a,b,c];
+    //     return anyNumberArray[Math.floor(Math.random() * anyNumberArray.length)];
+    // }
+    // return Math.max(a,b,c);
+    let result = console.log('hi');
+console.log(result); 
 }
 
 
