@@ -1,33 +1,4 @@
-.love{
-    position: relative;
-    width: 20%;
-    height: auto;
-}
-.merry{
-    width: 10%;
-    position: relative;
-    height: auto;
-}
-.man{
-    width: 10.5%;
-    position: relative;
-    height: auto;
-}
+
 h4{
     color: green;
-}
-
-.thisIsVideo{
-    position: relative;
-    width: 10%;
-}
-.lamp{
-    width: 10%;
-    position: relative;
-    height: auto;
-}
-.run{
-    width: 10%;
-    position: relative; 
-    height: auto;
 }
