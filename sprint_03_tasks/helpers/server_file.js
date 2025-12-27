@@ -1,4 +1,3 @@
-import path from 'path';
 import {readFile} from 'fs/promises'
 import { types } from './types.js';
 
