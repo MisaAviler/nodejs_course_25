@@ -8,11 +8,16 @@
 
 
 module.exports.prepareString = (str) => {
-    if(!str || typeof str !== 'string') {
-        return console.log('String is empty or not a string');
+
+    try{
+        if(!str || typeof str !== 'string') {
+             throw new TypeError('Argument is not a string or is empty');
+        }
+
+        const mainStr = str.trim().toLowerCase();
+        return mainStr.charAt(0).toUpperCase() + mainStr.slice(1);
     }
-   
-    const mainStr = str.trim().toLowerCase();
-    const beggingIs = mainStr.charAt(0).toUpperCase() + mainStr.slice(1);
-    return beggingIs; 
+    catch(err){
+        throw err;
+    }
 }

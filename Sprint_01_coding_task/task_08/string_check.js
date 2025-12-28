@@ -1,14 +1,18 @@
 module.exports = (str) =>{
 
+    try{
         if (typeof str !=='string'){
-            return console.log('Is not a string');
+            throw new TypeError('Argument is not a string')
         }
         const newStr = str.split("");
         const hasUppercase = newStr.some((el)=> el === el.toUpperCase() && el !== ' ' );
         if (!hasUppercase){
-            return console.log(true);
+            return true;
         }
-       else return console.log(false);
+        else return false;
 
-        
     }
+    catch(err){
+        throw err;
+    }
+}

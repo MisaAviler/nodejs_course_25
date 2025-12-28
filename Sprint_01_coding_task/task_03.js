@@ -5,5 +5,5 @@
 
 
 module.exports = (arrayNumbers) => {
-   return arrayNumbers.filter((el)=> el >= 0)
+     return arrayNumbers.filter((el)=> el >= 0).length;
 }
