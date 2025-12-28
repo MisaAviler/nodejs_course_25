@@ -6,9 +6,16 @@
 
 
 module.exports.randomSymbol = (str)=>{
-    if(typeof str !== 'string') {
-        return console.log('String is not a string');
+    try{
+        if(typeof str !== 'string') {
+            throw new TypeError('Argument is not a string')
+        }
+        return str.charAt(Math.floor(Math.random() * str.length));
+
     }
-const symbolIs = str.charAt(Math.floor(Math.random() * str.length));
-return symbolIs;
+    catch(err){
+        throw err;
+    }
+   
+
 }

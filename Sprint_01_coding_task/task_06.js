@@ -5,8 +5,13 @@
 
 
 module.exports.integerPart =(num)=>{
-    if( typeof num !== 'number') {
-        return console.log('Is not a number');
+    try{
+        if( typeof num !== 'number') {
+            throw new TypeError('Argument is not a number');
+        }
+        return Math.trunc(num)
     }
-    return Math.trunc(num)
+    catch(err){
+        throw err;
+    }
 }

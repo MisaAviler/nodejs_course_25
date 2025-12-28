@@ -15,11 +15,18 @@
 // ' f oo ' -> false
 
 module.exports=(str)=>{
-     if (typeof str !=='string'){
-         return console.log('Is not a string');
-     }
-    const newStr = str.trim();
-    const space = ' ';
-    return newStr.includes(space) ? false : true;
+
+    try{
+        if (typeof str !=='string'){
+            throw new TypeError('Argument is not a string')
+        }
+        const newStr = str.trim();
+        return newStr.includes(' ') ? false : true;
+    }
+    catch(err){
+        throw err;
+    }
+     
+   
 
 }
