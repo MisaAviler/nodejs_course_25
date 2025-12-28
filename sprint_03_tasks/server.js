@@ -23,6 +23,9 @@ const server = http.createServer(async(req,res)=>{
     if(req.url === '/'){
         return getFileContent(res, path.join('public', 'html','index.html'), '.html')
     }
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Not Found');
 })
 
 server.listen(PORT, ()=>{
