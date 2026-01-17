@@ -1,0 +1,12 @@
+extends template
+include mixins/productCard.pug
+
+block content
+  .container.mt-4
+    h1.text-center.mb-4.text-capitalize= singleCategory[0].category
+    if singleCategory.length
+      .row
+        each item in singleCategory
+          +productCard(item)     
+    else
+      .alert.alert-warning.text-center No products found in this category.
