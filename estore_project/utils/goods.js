@@ -26,8 +26,9 @@ export const getGoods = async () => {
     }
     const filePath = join(__dirname, '../data/goods.json');
     const data = await readFile(filePath, 'utf-8');
-    setCachedGoods(JSON.parse(data))
-    return JSON.parse(data)
+    const parsedData = JSON.parse(data);
+    setCachedGoods(parsedData);
 
-    
+    return parsedData;
+
 }

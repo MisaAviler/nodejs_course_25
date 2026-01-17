@@ -17,10 +17,6 @@ app.set('views','./views');
 
 const PORT = process.env.PORT || 3000;
 
-await getGoods();
-
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(express.static(join(__dirname, 'public')));
