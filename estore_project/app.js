@@ -5,7 +5,6 @@ import { dirname, join } from 'path'
 import {not_found} from './middleware/index.js'
 import {ROUTES} from './common/index.js'
 import dotenv from 'dotenv'
-import {getGoods} from './utils/goods.js'
 
 dotenv.config()
 
