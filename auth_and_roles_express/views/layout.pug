@@ -1,0 +1,26 @@
+doctype html 
+html 
+    head 
+        meta(charset='utf-8')
+        title= title || 'Express + PuG'
+        style.            
+            nav { background: #f0f0f0; padding: 10px; margin-bottom:20px;} 
+            nav a {margin-right: 15px}
+                .user-info {float: right}
+                .user { ßright: 6%; position: absolute; font-size: 20px;color: blue;}
+    body   
+        nav 
+            a(href='/') Home 
+            a(href='/only-users') Only Users 
+            a(href='/about') About  
+            a(href='/admin') Admin 
+            a(href='/register') Register 
+                .user-info 
+                    if username 
+                        span Welcome, #{username}!          
+                        a(href='/logout') Logout 
+                        h1.user #{role}  #{email}   
+                    else 
+                        a(href='/login') Login 
+
+        block content
