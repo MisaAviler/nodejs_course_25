@@ -10,7 +10,9 @@ dotenv.config();
 const SessionFileStore = FileSession(session)
 
 if(!fs.existsSync('./sessions')){
-    fs.mkdir('./sessions')
+    fs.mkdir('./sessions', (err) => {
+        if(err) console.error(err);
+    })
 }
 
 const app = express();
@@ -33,7 +35,7 @@ app.use(session({
     store: new SessionFileStore({
         path: './sessions',
         ttl: 24 * 60 * 60 * 30,
-        retries: 0
+        retries: 1
     })
 }));
 
