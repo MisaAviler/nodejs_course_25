@@ -15,12 +15,12 @@ html
             a(href='/about') About  
             a(href='/admin') Admin 
             a(href='/register') Register 
-                .user-info 
-                    if username 
-                        span Welcome, #{username}!          
-                        a(href='/logout') Logout 
-                        h1.user #{role}  #{email}   
-                    else 
-                        a(href='/login') Login 
+            .user-info 
+                if username 
+                    span Welcome, #{username}!          
+                    a(href='/logout') Logout 
+                    h1.user #{role}  #{email}   
+                else 
+                    a(href='/login') Login 
 
         block content
