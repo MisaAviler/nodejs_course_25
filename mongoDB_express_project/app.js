@@ -1,6 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mainRouter from './routes/main.js';
+import urlRouter from './routes/url.js';
+
 import morgan from 'morgan';
 import {MongoClient} from 'mongodb'
 import {setClient} from './db/db.js'
@@ -20,6 +22,7 @@ app.set('view engine', 'pug');
 app.set('views','./views');
 
 app.use(mainRouter);
+app.use(urlRouter)
 app.use(morgan('dev'));
 
 // connect to MondoDb
@@ -29,7 +32,7 @@ const client = new MongoClient(MONGO_URI);
 try{
     await client.connect() //connect to DB
     setClient(client)
-    console.log(`Connected to Db ${client}`)
+    console.log(`Connected to Db`)
 }
 catch(err){
     console.log(err);

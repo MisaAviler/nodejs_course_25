@@ -1,0 +1,20 @@
+h1 You have been redirected to
+p.count
+p
+    a(href=`${url}`) url
+
+script. 
+    const url = '!{url}';
+    let count = 3
+    const countElement = document.querySelector('.count')
+    countElement.textContent = count;
+
+    const interval = setInterval(function(){
+        count--;
+        countElement.textContent = count;
+
+        if(count===0){
+            clearInterval(interval);
+            window.location.href = url
+        }
+    },1000)

@@ -6,8 +6,7 @@ const router = Router();
 router.get('/', async (req,res)=>{
     const cursor = getUrlsCollections().find() // just link to collection's documents;
     const data = await cursor.toArray() // the documents of collection
-    console.log(data)
-    res.render('main', {})
+    res.render('main', {urls: data})
 });
 
 router.post('/create', async (req,res)=>{
