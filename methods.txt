@@ -1,0 +1,90 @@
+node app.js > log.log //terminal command to write info in file log.log from console.log()
+
+🔸 Cursor (часть sync, часть async)
+Метод	async?
+find	❌
+limit	❌
+skip	❌
+sort	❌
+toArray	✅
+forEach	✅
+next	✅
+
+
+🔸 Collection (обычно async)
+Метод	async?
+insertOne	✅
+insertMany	✅
+findOne	✅
+updateOne	✅
+deleteOne	✅
+countDocuments	✅
+
+
+CRUD
+
+
+
+// READ bd CRUD (buffer)
+
+const getBooksCollection = async() =>{
+   const cursor = getCollectionsData().find();  // find - not async method (work with buffer)
+   const data = await cursor.toArray(); // toArray - async method
+   console.log(data)
+}
+// CREATE smth in CRUD
+
+const setUser = async () => {
+    const result = await getCollectionsData().insertOne({ // insertOne - async method (works with collection)
+        "name": "Lera",
+        "age": 27,
+        "city": "Dnipro"
+    });
+    console.log(result)
+
+}
+
+// UPDATE ONE CRUD
+const updateUser = async() => {
+    const result = await getCollectionsData().updateOne({
+        "name":"Lera"
+    },
+    {
+        $set: {"age": 57},
+        $set: {"city": "Kyiv"},
+        $set: {"status": "single"},
+        //or you can write ( it is better ) like thar
+         $set: {"info": "work", "remote": true}
+
+
+    })
+    console.log(result)
+}
+
+
+// UPDATE MANY CRUD (DO back up before Many)
+const updateUsers = async() => {
+    const result = await getCollectionsData().updateMany({
+        "city":"Dnipro"
+    },
+    {
+        $set: {"post_code": 49000},
+    })
+    console.log(result)
+}
+
+
+// DELETE one(In real life we don't delete data from db. Better to add some key-value 'delete' : true)
+const deleteUser = async()=>{
+    const result = await getCollectionsData().deleteOne({
+        "name": "Petro"
+    });
+    console.log(result)
+}
+// DELETE many(In real life we don't delete data from db. Better to add some key-value 'delete' : true)
+const deleteUsers = async()=>{
+    const result = await getCollectionsData().deleteMany({
+        "name": "Lera"
+    });
+    console.log(result)
+}
