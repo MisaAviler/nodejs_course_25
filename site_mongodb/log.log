@@ -1,0 +1,27 @@
+[dotenv@17.2.3] injecting env (2) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+CONNECTED to MongoDB - ok
+[
+  { author: 'Jane Austen' },
+  { author: 'George Orwell' },
+  { author: 'Aldous Huxley' },
+  { author: 'Charlotte Brontë' },
+  { author: 'Emily Brontë' },
+  { author: 'Charles Dickens' },
+  { author: 'Charles Dickens' },
+  { author: 'Oscar Wilde' },
+  { author: 'Mary Shelley' },
+  { author: 'William Golding' }
+]
+Number of documents in collection: 10 
+ [
+  { title: 'Pride and Prejudice' },
+  { title: '1984' },
+  { title: 'Brave New World' },
+  { title: 'Jane Eyre' },
+  { title: 'Wuthering Heights' },
+  { title: 'Great Expectations' },
+  { title: 'Oliver Twist' },
+  { title: 'The Picture of Dorian Gray' },
+  { title: 'Frankenstein' },
+  { title: 'Lord of the Flies' }
+]
