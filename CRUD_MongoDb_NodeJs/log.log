@@ -1,0 +1,12 @@
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+CONNECTED to MongoDB - ok
+[
+  {
+    _id: new ObjectId('69776d46ef087829dfe27d70'),
+    name: 'Vasya',
+    age: 30,
+    city: 'Dnipro',
+    post_code: 49000,
+    address: { country: 'Ukraine' }
+  }
+]

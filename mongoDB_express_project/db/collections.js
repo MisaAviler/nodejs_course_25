@@ -1,9 +1,9 @@
-import { getDb} from './db.js';
+import { getDb} from './db.js'
 
 let COLLECTIONS_URLS;
 
 
-export const getUrlsCollections = () => {
+export const getCollections = () => {
     if(!COLLECTIONS_URLS){
         const DB = getDb(process.env.DB_NAME);
         COLLECTIONS_URLS = DB.collection('urls');

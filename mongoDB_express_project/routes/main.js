@@ -17,7 +17,7 @@ router.post('/create', async (req,res)=>{
     if (!documentUrl){
 
     // insertOne({}) - for insert One; insertMany - for many
-        const result = await getUrlsCollections().insertOne({
+        const result = await getUrlsCollections().insertOne({ // insertOne - async operation
             "url" : url,
             "shortUrl" : crypto.randomBytes(3).toString('hex'),
             "createdAt" : new Date()
