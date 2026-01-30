@@ -9,13 +9,17 @@ const __dirname = dirname(fileName);
 let booksFileData = {};
 
 export const getBooks = async () => {
+    try{
+        const filePath = join(__dirname, '../data/books.json');
+        const data = await readFile(filePath, 'utf-8');
+        const parsedData = JSON.parse(data);
+        const filePathBaseName =  path.basename(filePath);
 
-    const filePath = join(__dirname, '../data/books.json');
-    const data = await readFile(filePath, 'utf-8');
-    const parsedData = JSON.parse(data);
-    const filePathBaseName =  path.basename(filePath);
-
-    booksFileData.fileName = filePathBaseName;
-    booksFileData.dataBooks = parsedData;
-    return booksFileData;
+        booksFileData.fileName = filePathBaseName;
+        booksFileData.dataBooks = parsedData;
+        return booksFileData;
+    }
+    catch(err){
+        console.log(err)
+    }
 }

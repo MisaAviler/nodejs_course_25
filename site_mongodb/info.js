@@ -1,8 +1,14 @@
+import {connectDB} from './db/connections.js'
 import {getCollectionBooks} from './db/collections.js';
-import { getConsoleParams } from './utils/cleanParams.js'
+import {closeClient} from './db/db.js';
+import { getConsoleParams } from './utils/cleanParams.js';
+
+await connectDB();
+
+
 
 //Task 07
-export const getBooksInfo = async() =>{
+ const getBooksInfo = async() =>{
     const cursor = getCollectionBooks().find({});
     const data = await cursor.toArray();
     const dataLength= data.length;
@@ -10,8 +16,11 @@ export const getBooksInfo = async() =>{
     const titleInfo =  getCollectionBooks().find({},
        {projection:{ title: 1, _id:0 }
     });
-    const title = await titleInfo.toArray()
-    console.log(`Number of documents in collection: ${dataLength} \n`,title)
+    const title = await titleInfo.toArray();
+    const values = title.map((el)=>{
+        return el.title
+    })
+    console.log(`Number of documents in collection: ${dataLength} \n`,values)
 };
 
 
@@ -22,7 +31,10 @@ export const getBooksInfo = async() =>{
     });
    
     const data = await cursor.toArray();
-    console.log(data);
+    const values = data.map((el)=>{
+        return el.author
+    })
+    console.log(values);
 }
 
 //Task 08
@@ -41,8 +53,10 @@ export const getBooksInfo = async() =>{
         projection: { title : 1, _id:0}
     });    
     const data = await cursor.toArray();
-
-    console.log(`Rating from and include: ${JSON.stringify(data)}`)
+    const values = data.map((el)=>{
+        return el.title
+    })
+    console.log(`Rating from and include: ${JSON.stringify(values)}`)
 
 }
 
@@ -68,7 +82,7 @@ const options = {
 }
 
 
-export const callOption = async() =>{
+ const callOption = async() =>{
         const param = getConsoleParams();
 
         if (param){
@@ -79,3 +93,6 @@ export const callOption = async() =>{
             await options[key](key,value);
         }
 }
+await getBooksInfo();
+await callOption();
+await closeClient();
