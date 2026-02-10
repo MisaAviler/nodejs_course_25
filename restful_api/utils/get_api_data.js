@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const PORT = process.env.PORT || 4100;
-const PB_API='https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5'
+const PB_API = process.env.PB_API;
 
 export const get_api_data = async() => { 
     try {

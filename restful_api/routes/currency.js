@@ -16,23 +16,19 @@ router.get('/', async (req, res) => {
 router.get('/:specific', async(req,res)=>{
     try{
         const api_data = await get_api_data();
-        const {specific} = req.params;
-        let filtered_data = {};
-        if(api_data[specific.toUpperCase()]){
-            filtered_data = {[specific.toUpperCase()] : api_data[specific.toUpperCase()]}
-        }
-        else {
+        const key = req.params.specific.toUpperCase();
+        if(!api_data[key]){
             return res.status(404).json({
             code: 404,
             message: 'This currency does not found'
-      });
+        })}
+        else {
+            return res.json({[key]:[api_data[key]]})
         }
-        res.json(filtered_data)
     }
      catch(err){
-        res.status(500).json({ error: 'Something went wrong' });
+        res.status(500).json({ error: 'Ooops. Something went wrong' });
     }
-
 })
 
 export default router;
