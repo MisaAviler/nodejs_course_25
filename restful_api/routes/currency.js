@@ -27,7 +27,7 @@ router.get('/:specific', async(req,res)=>{
         }
     }
      catch(err){
-        res.status(500).json({ error: 'Something went wrong' });
+        res.status(500).json({ error: 'Ooops. Something went wrong' });
     }
 })
 
