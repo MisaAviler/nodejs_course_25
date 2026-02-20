@@ -1,0 +1,19 @@
+
+> homework_mongoose@1.0.0 start
+> node app.js
+
+🐭 Mongoose connected to MongoDB
+database connect -> ok
+mongodb://localhost:27017/homework_schema
+{
+  type: 'ddq',
+  brand: 'sl',
+  technologies: [],
+  recommendedUsage: [],
+  availability: 'in_stock',
+  _id: new ObjectId('69989bb8a6d7bf8d824aa8d1'),
+  createdAt: 2026-02-20T17:36:56.374Z,
+  updatedAt: 2026-02-20T17:36:56.374Z,
+  __v: 0
+}
+🐭 Mongoose disconnected from Mongo
